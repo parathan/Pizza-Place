@@ -1,0 +1,20 @@
+{% extends "PizzaTemplates/Base.html" %}
+
+{% block title %}
+Registration
+{% endblock %}
+
+{% block body %}
+<h3>Register</h3>
+<form action="{% url 'registered' %}" method="post">
+  {% csrf_token %}
+  <input type="text" name="FirstName" placeholder="First Name" autocomplete="off"><br>
+  <input type="text" name="LastName" placeholder="Last Name" autocomplete="off"><br>
+  <input type="text" name="Email" placeholder="Email" autocomplete="off"><br>
+  <input type="text" name="Username" placeholder="Username" autocomplete="off"><br>
+  <input type="password" name=Password placeholder="Password" autocomplete="off"><br>
+  <input type="password" name=Password2 placeholder="Confirm Password" autocomplete="off"><br>
+  <input type="submit" value="Register"><br>
+</form>
+<a href="{% url 'index' %}">Home</a>
+{% endblock %}
