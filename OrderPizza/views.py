@@ -3,12 +3,19 @@ from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+from .models import Regular, Sicilian, Toppings, Subs, SubToppings, Pasta, Salads, Platters
 
 # Create your views here.
 def index(request):
     context = {
         "regular": Regular.objects.all(),
+        "sicilian": Sicilian.objects.all(),
         "toppings": Toppings.objects.all(),
+        "subs": Subs.objects.all(),
+        "subtoppings": SubToppings.objects.all(),
+        "pasta": Pasta.objects.all(),
+        "salads": Salads.objects.all(),
+        "platters": Platters.objects.all(),
     }
     return render(request, "PizzaTemplates/Index.html", context)
 
