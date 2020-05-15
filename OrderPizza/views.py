@@ -6,7 +6,11 @@ from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
 def index(request):
-    return render(request, "PizzaTemplates/Index.html")
+    context = {
+        "regular": Regular.objects.all(),
+        "toppings": Toppings.objects.all(),
+    }
+    return render(request, "PizzaTemplates/Index.html", context)
 
 def register(request):
     return render(request, "PizzaTemplates/Register.html")
