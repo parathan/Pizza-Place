@@ -49,3 +49,9 @@ def loginverify(request):
         return HttpResponseRedirect(reverse('index'))
     else:
         raise Http404("Invalid Credentials")
+
+def order(request):
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('login'))
+    else:
+        return render(request, "PizzaTemplates/PlaceOrder")
