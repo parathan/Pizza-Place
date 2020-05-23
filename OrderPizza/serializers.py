@@ -1,45 +1,43 @@
 from rest_framework import serializers
 
-from .models import Regular, Sicilian, Toppings, Subs, SubToppings, Pasta, Salad, Platters,
+from .models import Regular, Sicilian, Toppings, Subs, SubToppings, Pasta, Salads, Platters
 
-class RegularSerializer(serializers.HyperLinkedModelSerializer):
+class RegularSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Regular
         fields = ('type', 'smallprice', 'largeprice')
 
-class SicilianSerializer(serializers.HyperLinkedModelSerializer):
+class SicilianSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Sicilian
         fields = ('type', 'smallprice', 'largeprice')
 
-class ToppingsSerializer(serializers.HyperLinkedModelSerializer):
+class ToppingsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Toppings
         fields = ('topping')
 
-class SubsSerializer(serializers.HyperLinkedModelSerializer):
+class SubsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model  = Subs
         fields = ('type', 'smallprice', 'largeprice')
 
-class SubToppingsSerializer(serializers.HyperLinkedModelSerializer):
+class SubToppingsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = SubToppings
         fields = ('type', 'smallprice', 'largeprice')
 
-class PastaSerializer(serializers.HyperLinkedModelSerializer):
+class PastaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Pasta
         fields = ('type', 'price')
 
-class SaladsSerializer(serializers.HyperLinkedModelSerializer):
+class SaladsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Salads
         fields = ('type', 'price')
 
-class PlattersSerializer(serializers.HyperLinkedModelSerializer):
+class PlattersSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Platters
         fields = ('type', 'smallprice', 'largeprice')
-
-    
